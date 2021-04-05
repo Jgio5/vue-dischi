@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Utility */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 30px;
+    height: 100%;
+    width: 80%;
+}
+
+/* Header */
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background-color: #2F3A46;
+}
+
+.logo img {
+    height: 80px;
+    width: 80px;
+    margin-left: 10px;
+}
+/* / Header */
+
+/* Main */
+main {
+    height: calc(100vh - 100px);
+    width: 100%;
+    background-color: #1E2D3B;
+}
+
+.box {
+    width: 180px;
+    height: 350px;
+    padding: 5px;
+    margin: 10px; 
+    text-align: center;
+    background-color: #2F3A46;
+}
+
+.box .album_song {
+    height: calc(180px - 5px -5px);
+    width: calc(180px - 5px -5px);
+}
+.box .album_song img {
+    width: 150px;
+    height: 150px;
+}
+
+.box .title_song {
+    margin-top: 20px;
+    height: 50px;
+    text-transform: uppercase;
+    color: white;
+}
+.box .title_song h1 {
+    font-size: 15px;
+}
+
+.box .artist_age {
+    color: grey;
+}
