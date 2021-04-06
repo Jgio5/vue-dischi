@@ -31,11 +31,6 @@ var app = new Vue({
             .get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((result) => {
                 this.songs = result.data.response.sort((a,b) => a.year - b.year);
-                this.songs.forEach(song => {
-                    if(!this.genres.includes(song.genre)) {
-                        this.genres.push(song.genre);
-                    }
-                });
             });
         },
         descendingOrder() {
@@ -43,11 +38,6 @@ var app = new Vue({
             .get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((result) => {
                 this.songs = result.data.response.sort((a,b) => b.year - a.year);
-                this.songs.forEach(song => {
-                    if(!this.genres.includes(song.genre)) {
-                        this.genres.push(song.genre);
-                    }
-                });
             });
         }
     }
