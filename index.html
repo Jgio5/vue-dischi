@@ -23,23 +23,36 @@
         <!-- Main -->
         <main>
             <div class="container">
-                <!-- Box -->
-                <div v-for='(songs,index) in mySongs' class="box">
 
-                    <div class="album_song">
-                        <img :src="mySongs[index].poster" alt="immagine album">
-                    </div>
+                <!-- settings -->
+                <div class="select_settings">
+                    <select v-model="selected" id="genres">
+                        <option v-for="genre in genres"> {{ genre }}</option>
+                    </select>
+                        <button @click="ascendingOrder()" class="btn">Ordine anno crescente</button>
+                        <button @click="descendingOrder()" class="btn">Ordine anno decrescente</button>
+                </div>
+                <!-- /settings -->
 
-                    <div class="title_song">
-                        <h1> {{ mySongs[index].title }} </h1>
-                    </div>
-                    
-                    <div class="artist_age">
-                        <p> {{ mySongs[index].author }} </p>
-                        <p> {{ mySongs[index].year }} </p>
-                    </div>        
-                </div>  
-                 <!--/Box  -->
+                <!-- song -->
+                <div id ="section_cd">
+                    <div v-if="show(song)" v-for='song in songs' class="box">
+
+                        <div class="album_song">
+                            <img :src="song.poster" alt="immagine album">
+                        </div>
+
+                        <div class="title_song">
+                            <h1> {{ song.title }} </h1>
+                        </div>
+                        
+                        <div class="artist_age">
+                            <p> {{ song.author }} </p>
+                            <p> {{ song.year }} </p>
+                        </div>        
+                    </div> 
+                </div>
+                <!-- /song -->
             </div>
         </main>
         <!-- Main -->
